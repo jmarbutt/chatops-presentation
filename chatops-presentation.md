@@ -80,13 +80,38 @@
 #### Maybe not everyone... just Rick
 
 ---
+##[fit] But **why** not just write a script?
+### A non-chat script?
+
+---
+## ChatOps is about **communication**
+
+---
+
+## It gives your entire **team** insight into whats been **run**
+
+---
+
+## It gives **other** team members the ability to run scripts
+
+---
 ## Anatomy of a **Script**
 
 --- 
 ### It's just **Node**
 
+```javascript
+module.exports = function(robot) {
+    robot.respond(/is it (weekend|holiday)\s?\?/i, function(msg){
+        var today = new Date();
+
+        msg.reply(today.getDay() === 0 || today.getDay() === 6 ? "YES" : "NO");
+    });
+}
+```
+
 ---
-### Most are written in **coffee script**
+### Most written in **coffee script**
 
 ---
 
@@ -111,7 +136,7 @@ robot.hear /badger/i
 ```coffee
 robot.respond /open the pod bay doors/i
 ```
-**nick** @Hubot open the pod bay dooors
+**nick** @Hubot open the pod bay doors
 
 ---
 ##**Talking** Back
@@ -186,9 +211,17 @@ robot.respond /sleep it off/i, (res) ->
 - Restricted Access to Commands
 - XML Parsing
 - Screen Scraping (cheerio and jsdom)
-- Whatch if topic changes
+- Watch if topic changes
 - Know when someone enters or leaves a room
 
 ---
 
-##How could **we** user Hubot?
+##How could **we** use Hubot?
+
+---
+
+##Ideas?
+- Deployments
+- Phonegap Builds
+- Jira Integration?
+- Time logging into jira?
